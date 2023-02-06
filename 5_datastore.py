@@ -16,34 +16,50 @@ room-number,use,sq-ft,price
 '''
 
 
-
-
-datastore = { "medical":[
-      { "room-number": 100,
-        "use": "reception",
+datastore = {"medical": [
+    {"room-number": 100,
+     "use": "reception",
         "sq-ft": 50,
-        "price": 75
-      },
-      { "room-number": 101,
-        "use": "waiting",
+        "price": 75,
+     },
+    {"room-number": 101,
+     "use": "waiting",
         "sq-ft": 250,
-        "price": 75
-      },
-      { "room-number": 102,
-        "use": "examination",
+        "price": 75,
+     },
+    {"room-number": 102,
+     "use": "examination",
         "sq-ft": 125,
-        "price": 150
-      },
-      { "room-number": 103,
-        "use": "examination",
+        "price": 150,
+     },
+    {"room-number": 103,
+     "use": "examination",
         "sq-ft": 125,
-        "price": 150
-      },
-      { "room-number": 104,
-        "use": "office",
+        "price": 150,
+     },
+    {"room-number": 104,
+     "use": "office",
         "sq-ft": 150,
-        "price": 100
-      }
+        "price": 100,
+     }
 
-      ]
+    outfile=  open("retail_space.csv", "w")
+    outfile.write("room-number,use,sq-ft,price\n")
+
+    list1= datastore["medical"]
+    for dict in list1:
+    room_number = dict["room_number"]
+    use = dict["use"]
+    sq = dict['sq-ft"]
+    price = dict["price"]
+    outfile.write(str(room_number) + ',' + use +
+                  str(sq) + ',' + str(price) + '\n')
+
+    outfile.close()
+
+
+
+    input()
+
+]
 }
