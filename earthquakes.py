@@ -35,10 +35,10 @@ Latitude: 14.7628
 
 import json
 
-infile = open("eq_data.json", 'r')
+infile = open("eq_data.json", "r")
 readfile = json.load(infile)
 
-print(len(readfile["features"]))
+print(f'\n\nNumber of earthquakes: {len(readfile["features"])}\n\n')
 
 eq_dict = {}
 
@@ -50,10 +50,9 @@ for earthquake in readfile["features"]:
         mag = earthquake["properties"]["mag"]
         eq_dict[earthquake["properties"]["title"]] = {
             'Longitude': long, 'Latitude': lat, 'Location': loc, 'Magnitude': mag}
-print(eq_dict)
 
 for i in eq_dict:
-    print(f"Location: {i}")
+    print(f"Location: {eq_dict[i]['Location']}")
     print(f"Magnitude: {eq_dict[i]['Magnitude']}")
     print(f"Longitude: {eq_dict[i]['Longitude']}")
     print(f"Latitude: {eq_dict[i]['Latitude']}\n\n")
