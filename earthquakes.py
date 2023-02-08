@@ -51,6 +51,11 @@ for earthquake in readfile["features"]:
         eq_dict[earthquake["properties"]["title"]] = {
             'Longitude': long, 'Latitude': lat, 'Location': loc, 'Magnitude': mag}
 
+
+print(eq_dict)
+print()
+print()
+
 for i in eq_dict:
     print(f"Location: {eq_dict[i]['Location']}")
     print(f"Magnitude: {eq_dict[i]['Magnitude']}")
